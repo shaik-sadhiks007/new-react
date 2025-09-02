@@ -1,0 +1,44 @@
+react js ----- developed by facebook
+
+why we use the react js ?
+
+react js is a single page application (spa)
+
+more performance
+
+---- it will take update so quickly --- it will update only changed component ---- it is happened because of virtual dom
+
+in the react js we have more lib ---
+
+
+react js is a library of js ---- 
+
+
+-----------------
+
+installation of the react js ---
+
+1. install the node js
+
+2. install the react js 
+
+ --- 1. cra ----- create react app
+
+---- 2. vite js ---- it is also a app 
+
+3. npm (node package manager) --- playstore
+
+ use the npm create vite@latest to install the app
+
+4. it will ask for few questions ---
+
+prj name : 'flipkart'
+
+framework : react 
+
+variant : javascript 
+
+
+5. cd flipkart
+  npm install
+  npm run dev
