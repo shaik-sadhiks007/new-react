@@ -1,3 +1,16 @@
+
+function fnName() {
+    // js code like let a = 5 , functions
+
+    return(
+        html code
+    )
+}
+
+----------------------------------------
+
+// basic syntax
+
 // importing means on which location this function is available and make sure export default is available in the component
 
 import Welcome from './component/Welcome'

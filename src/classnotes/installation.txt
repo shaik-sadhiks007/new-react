@@ -40,5 +40,5 @@ variant : javascript
 
 
 5. cd flipkart
-  npm install
-  npm run dev
+  npm install --- to install the important libraries 
+  npm run dev --- to start the website
