@@ -1,6 +1,7 @@
 // importing means on which location this function is available and make sure export default is available in the component
 
 import Welcome from './component/Welcome'
+import Counter from './component/Counter';
 
 // while importing the css we have to give the path only no need of export or function name
 import './App.css'
@@ -8,11 +9,17 @@ import './App.css'
 // function name should start with capital letter
 function App() {
 
-  let name = 'hemanth'
+
+  // js above of the return keyword
+
+  let name = 'sadhik';
+
 
   return (
     <div>
-      <h1  style={{color : 'red', backgroundColor : 'black'}}>hello {name}, welcome</h1>
+      <h1 style={{ color: 'red', backgroundColor: 'black' }}>
+        hello {name}, welcome
+      </h1>
 
       <p className='ptag'>
         how r u ?
@@ -23,6 +30,12 @@ function App() {
       {/* // function call in the html */}
 
       <Welcome />
+
+      <Counter/>
+
+
+
+      {/* // while calling the function please use the callback function */}
 
     </div>
   )
