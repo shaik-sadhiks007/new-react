@@ -2,6 +2,7 @@
 
 import Welcome from './component/Welcome'
 import Counter from './component/Counter';
+import Todos from './component/Todos';
 
 // while importing the css we have to give the path only no need of export or function name
 import './App.css'
@@ -32,6 +33,10 @@ function App() {
       <Welcome />
 
       <Counter/>
+
+      <Todos />
+
+      
 
 
 

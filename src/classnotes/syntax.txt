@@ -42,3 +42,21 @@ function App() {
 }
 
 export default App
+
+
+
+
+function Testing() {
+
+
+  return(
+
+    <div> 
+
+    here when we use the html use the () -- parenthesis
+
+    when we use the js code use the {} --- curly braces
+    </div>
+    
+  )
+}

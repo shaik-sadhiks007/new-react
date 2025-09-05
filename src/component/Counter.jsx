@@ -4,23 +4,20 @@ function Counter() {
 
     const [counter, setCounter] = useState(0);
 
+    // when we use the traditional way of declaring the variables it won't update the html 
+    // let counter = 0; ---- declaration
+    // counter = 10  =======> setcounter(10)
+
     function handleIncrement() {
-
         setCounter(counter + 1)
-
     }
 
     function handleDecrement() {
-
         setCounter(counter - 1)
-
     }
 
-
     function handleReset() {
-
         setCounter(0)
-
     }
 
 
