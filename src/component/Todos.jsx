@@ -1,45 +1,42 @@
-import { useState } from "react"
-
+import { useState, useEffect } from "react"
 
 function Todos() {
 
     // let todos = []
 
-    const [todos, setTodos] = useState(
-        [
-            {
-                userId: 1,
-                id: 1,
-                title: "testing 1",
-                completed: false
-            },
-            {
-                userId: 1,
-                id: 2,
-                title: "testing 2",
-                completed: false
-            },
+    const [todos, setTodos] = useState([])
 
-            {
-                userId: 2,
-                id: 3,
-                title: "testing 3",
-                completed: false
-            },
-            {
-                userId: 2,
-                id: 4,
-                title: "testing 4",
-                completed: false
-            },
-            {
-                userId: 3,
-                id: 5,
-                title: "testing 5",
-                completed: false
-            },
-        ])
+    const [counter, setCounter] = useState(0);
 
+    function handleIncrement() {
+        setCounter(counter + 1)
+    }
+
+    async function fetchTodos() {
+
+        const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+        // console.log(res,'res')
+
+        const data = await res.json()
+        setTodos(data.slice(0, 5))
+
+    }
+
+    console.log(todos, 'todos')
+
+    // instead of calling the async function directly use the useeffect funtion
+
+    // it will call the function only one time instead of multiple times
+    // fetchTodos()
+
+    useEffect(
+
+        () => {
+            fetchTodos()
+        }, []
+
+    )
 
     return (
         <div>
@@ -47,10 +44,12 @@ function Todos() {
                 Todos application
             </h1>
 
-
-
             {/* when we are using the map we have to use key ---- */}
-            
+
+            <h1>Counter : {counter}</h1>
+
+            <button onClick={() => handleIncrement()}>increment</button>
+
             {
                 todos.map((ele, index) => (
                     <div key={index}>

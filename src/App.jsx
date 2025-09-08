@@ -3,6 +3,7 @@
 import Welcome from './component/Welcome'
 import Counter from './component/Counter';
 import Todos from './component/Todos';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // while importing the css we have to give the path only no need of export or function name
 import './App.css'
@@ -18,25 +19,43 @@ function App() {
 
   return (
     <div>
-      <h1 style={{ color: 'red', backgroundColor: 'black' }}>
+      {/* <h1 style={{ color: 'red', backgroundColor: 'black' }}>
         hello {name}, welcome
       </h1>
 
       <p className='ptag'>
         how r u ?
-      </p>
+      </p> */}
 
       {/* welcome() */}
 
       {/* // function call in the html */}
 
+      {/* 
+
       <Welcome />
 
       <Counter/>
 
-      <Todos />
+      <Todos /> */}
 
-      
+      <BrowserRouter>
+
+        <Routes>
+
+          <Route path='/' element={<Welcome />} />
+
+          <Route path='/todos' element={<Todos />} />
+
+          <Route path='/counter' element={<Counter />} />
+
+
+
+
+
+        </Routes>
+
+      </BrowserRouter>
 
 
 

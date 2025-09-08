@@ -1,0 +1,27 @@
+
+useeffect --- it will say how many times you can call the function
+
+syntax : 
+
+
+useeffect(  callback, dependency  )
+
+
+useeffect(
+
+    () => {
+        fetchTodos()
+    }, []
+
+)
+
+usage : when i call the async funtion directly it is calling backend continuously it will damage the performace
+
+for that we use useeffect function(hooks) to call only one time
+
+
+dependency : 
+
+[]  ---- this useeffect hook not depending on anything, the fetchtodos function call only one time that too on page load
+
+[variablename] ---- useeffect depends on this variablename, when i update the variablename, it will call the fetchTodos function once again

@@ -1,0 +1,33 @@
+
+to create multipages effect in the react (because it is a single page appliation)
+
+1. you have to install the react-router-dom
+
+---- npm i react-router-dom
+
+2. usage 
+
+step 1 : import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+step 2 : 
+
+ <BrowserRouter>
+
+        <Routes>
+
+          <Route path='/' element={<Welcome />} />
+
+          <Route path='/todos' element={<Todos />} />
+
+          <Route path='/counter' element={<Counter />} />
+
+        </Routes>
+
+      </BrowserRouter>
+
+
+step 3 : so give the link in the header to navigate to use that 
+
+
+import { Link } from "react-router-dom";
+
