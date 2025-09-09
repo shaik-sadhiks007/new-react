@@ -60,3 +60,10 @@ function Testing() {
     
   )
 }
+
+
+node-modules for storing the downloaded packages
+
+package.json --- to store the versions of packages and scripts (for to start the website(server) )
+
+vite.config.js --- it will used for vite js app to use the react js 

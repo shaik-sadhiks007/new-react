@@ -1,0 +1,8 @@
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
+
+to use the bootstrap 
+
+1. npm install bootstrap@5.3.8
+
+2. import above things in the main.jsx

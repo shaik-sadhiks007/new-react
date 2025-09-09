@@ -1,3 +1,11 @@
 
 node modules --- all downloaded libraries/packages available here like react , bootstrap etc
 
+package.json --- to store the versions of packages and scripts (for to start the website(server) )
+
+npm run build ---- it will generate the dist folder which contains htnl,css,js
+
+---- it will comipile the react js and convert it to html,css, js 
+
+
+package-lock.sjon --- it will downloaded the versions availablein the package.sjon

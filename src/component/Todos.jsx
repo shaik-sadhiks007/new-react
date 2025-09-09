@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 
+
 function Todos() {
 
     // let todos = []
@@ -40,7 +41,7 @@ function Todos() {
 
     return (
         <div>
-            <h1>
+            <h1 className="todostitle text-danger">
                 Todos application
             </h1>
 
