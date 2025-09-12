@@ -6,13 +6,36 @@ function Todos() {
 
     // let todos = []
 
-    const [todos, setTodos] = useState([])
+    const [todos, setTodos] = useState([
 
-    const [counter, setCounter] = useState(0);
+        {
+            "userId": 1,
+            "id": 1,
+            "title": "delectus aut autem",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "quis ut nam facilis et officia qui",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 3,
+            "title": "fugiat veniam minus",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 4,
+            "title": "et porro tempora",
+            "completed": true
+        }
 
-    function handleIncrement() {
-        setCounter(counter + 1)
-    }
+    ])
+
+    const [inputData,setInputData] = useState('')
 
     async function fetchTodos() {
 
@@ -25,20 +48,46 @@ function Todos() {
 
     }
 
-    console.log(todos, 'todos')
+    // console.log(todos, 'todos')
 
     // instead of calling the async function directly use the useeffect funtion
 
     // it will call the function only one time instead of multiple times
     // fetchTodos()
 
-    useEffect(
+    // useEffect(
 
-        () => {
-            fetchTodos()
-        }, []
+    //     () => {
+    //         fetchTodos()
+    //     }, []
 
-    )
+    // )
+
+    function handleInput(event) {
+        setInputData(event.target.value)
+    }
+
+
+    function handleAdd() {
+
+       let newData = [...todos, {title : inputData,completed:false}]
+
+       setTodos(newData)
+
+       setInputData('')
+
+    }
+
+
+    function handleDelete(pos) {
+        console.log(pos,'position')
+
+        let filteredData = todos.filter((ele,index) => pos !== index)
+
+        // console.log(filteredData)
+
+        setTodos(filteredData)
+    }
 
     return (
         <div>
@@ -48,14 +97,18 @@ function Todos() {
 
             {/* when we are using the map we have to use key ---- */}
 
-            <h1>Counter : {counter}</h1>
+            <input type="text" placeholder="enter todo" 
 
-            <button onClick={() => handleIncrement()}>increment</button>
+            value={inputData}
+            onChange={(event) => handleInput(event)}/>
 
+            <button className="btn btn-primary" onClick={() => handleAdd()}>add</button>
             {
                 todos.map((ele, index) => (
-                    <div key={index}>
-                        {ele.title}
+                    <div key={index} className="my-3">
+                        <span>{ele.title}</span>
+                        <button>edit</button>
+                        <button onClick={() => handleDelete(index)}>delete</button>
                     </div>
                 ))
             }

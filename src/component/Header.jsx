@@ -25,6 +25,10 @@ function Header() {
                         <li className="nav-item">
                             <Link className="nav-link active text-light" aria-current="page" to="/products">products</Link>
                         </li>
+                         <li className="nav-item">
+                            <Link className="nav-link active text-light" aria-current="page" to="/apitodos">Api Todos</Link>
+                        </li>
+
                     </ul>
 
                 </div>

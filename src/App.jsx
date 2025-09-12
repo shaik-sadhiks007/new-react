@@ -4,11 +4,12 @@ import Welcome from './component/Welcome'
 import Counter from './component/Counter';
 import Todos from './component/Todos';
 import Header from './component/Header';
-
+import ProductDetail from './component/ProductDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // while importing the css we have to give the path only no need of export or function name
 import './App.css'
 import Products from './component/Products';
+import ApiTodos from './component/ApiTodos';
 
 // function name should start with capital letter
 function App() {
@@ -55,6 +56,12 @@ function App() {
           <Route path='/counter' element={<Counter />} />
 
           <Route path='/products' element={<Products />} />
+
+          <Route path='/products/:id' element={<ProductDetail />} />
+
+          <Route path='/apiTodos' element={<ApiTodos />} />
+
+
 
 
 

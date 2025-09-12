@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Products() {
 
     const [products, setProducts] = useState([])
+
+    // for html we have  link and a tag, but in the js we have to use the usenavigate function
+    const navigate = useNavigate() // for to use the navigation we have to initialize it
 
     async function fetchProducts() {
 
@@ -24,6 +28,13 @@ function Products() {
         }, []
     )
 
+    function handleNavigation(id) {
+        console.log(id,'id in the products')
+
+        navigate(`/products/${id}`)
+
+
+    }
 
 
     return (
@@ -58,7 +69,11 @@ function Products() {
                     products.map((ele, index) => (
                         <div key={index} className='col-12 col-sm-6 col-md-4 col-lg-3'>
 
-                            <div class="card" style={{ width: "18rem" }}>
+                            <div class="card" style={{ width: "18rem" }}
+
+                                onClick={() => handleNavigation(ele.id)}
+
+                            >
                                 <img src={ele.images[0]} className="card-img-top" alt="..." />
                                 <div className="card-body">
                                     <h5 className="card-title">{ele.title}</h5>
