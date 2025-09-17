@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import EachTodo from './EachTodo';
 
 function ApiTodos() {
 
@@ -81,7 +82,7 @@ function ApiTodos() {
 
     function handleEdit(ele) {
 
-        
+
 
         setSelectedTodo(ele)
 
@@ -95,8 +96,8 @@ function ApiTodos() {
 
     function handleTitleUpdate(event) {
 
-        let newTodo = { 
-            ...selectedTodo, title : event.target.value
+        let newTodo = {
+            ...selectedTodo, title: event.target.value
         }
 
 
@@ -107,14 +108,14 @@ function ApiTodos() {
 
     }
 
-    async function handleSave( ) {
+    async function handleSave() {
 
         let res = await fetch(`http://localhost:5000/api/todo/${selectedTodo._id}`, {
-            method : 'PUT',
-            headers : {
-                "Content-Type" : "application/json"
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
             },
-            body :  JSON.stringify(selectedTodo)
+            body: JSON.stringify(selectedTodo)
 
         })
 
@@ -123,7 +124,7 @@ function ApiTodos() {
         setOpenModal(false)
 
         fetchTodos()
-        
+
     }
 
     return (
@@ -141,18 +142,9 @@ function ApiTodos() {
 
 
 
-            <div className='d-flex flex-column justify-content-center align-items-center'>
-                {
-                    todos.map((ele, index) => (
-                        <div key={index} className="my-3">
-                            <span>{ele.title}</span>
-                            <button onClick={() => handleEdit(ele)}>edit</button>
-                            <button onClick={() => handleDelete(ele._id)}>delete</button>
-                        </div>
-                    ))
-                }
-            </div>
+           
 
+            <EachTodo sadhik={todos} handleDelete={handleDelete} handleEdit={handleEdit}/>
 
 
             {

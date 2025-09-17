@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function Header() {
 
 
-   
+
     return (
         <nav className="navbar navbar-expand-lg bg-primary">
             <div className="container-fluid">
@@ -25,8 +25,12 @@ function Header() {
                         <li className="nav-item">
                             <Link className="nav-link active text-light" aria-current="page" to="/products">products</Link>
                         </li>
-                         <li className="nav-item">
+                        <li className="nav-item">
                             <Link className="nav-link active text-light" aria-current="page" to="/apitodos">Api Todos</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link active text-light" aria-current="page" to="/register">Register</Link>
                         </li>
 
                     </ul>

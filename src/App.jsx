@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Products from './component/Products';
 import ApiTodos from './component/ApiTodos';
+import Register from './component/Register';
+import Login from './component/Login';
 
 // function name should start with capital letter
 function App() {
@@ -49,7 +51,7 @@ function App() {
 
         <Routes>
 
-          <Route path='/' element={<Welcome />} />
+          <Route path='/' element={<Login />} />
 
           <Route path='/todos' element={<Todos />} />
 
@@ -60,6 +62,11 @@ function App() {
           <Route path='/products/:id' element={<ProductDetail />} />
 
           <Route path='/apiTodos' element={<ApiTodos />} />
+
+          <Route path='/register' element={<Register />} />
+
+
+
 
 
 
