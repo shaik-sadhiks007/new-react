@@ -1,6 +1,20 @@
-import { Link } from "react-router-dom"
+import { useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 function Header() {
+
+
+    const navigate = useNavigate()
+    function handleLogout() {
+
+        localStorage.removeItem('token')
+
+        navigate('/')
+    }
+
+
+    const token = localStorage.getItem('token')
+
 
 
 
@@ -29,9 +43,21 @@ function Header() {
                             <Link className="nav-link active text-light" aria-current="page" to="/apitodos">Api Todos</Link>
                         </li>
 
-                        <li className="nav-item">
-                            <Link className="nav-link active text-light" aria-current="page" to="/register">Register</Link>
-                        </li>
+                        {
+
+                            token  ? (
+                                <li className="nav-item">
+                                    <button className="btn btn-danger" onClick={() => handleLogout()}>Logout</button>
+                                </li>
+                            ) : (
+                                <li className="nav-item">
+                                    <Link className="nav-link active text-light" aria-current="page" to="/register">Register</Link>
+                                </li>
+                            )
+                        }
+
+
+
 
                     </ul>
 

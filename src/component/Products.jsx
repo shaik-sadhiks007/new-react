@@ -22,14 +22,26 @@ function Products() {
 
     // fetchProducts()
 
+
+    function checkUser() {
+        let token = localStorage.getItem("token")
+
+        if (!token) {
+            navigate('/ ')
+        }
+    }
+
+
     useEffect(
         () => {
             fetchProducts()
+
+            checkUser()
         }, []
     )
 
     function handleNavigation(id) {
-        console.log(id,'id in the products')
+        console.log(id, 'id in the products')
 
         navigate(`/products/${id}`)
 
