@@ -1,0 +1,96 @@
+react js ---- concepts
+
+
+usestate --- to create the variables
+
+useeffect --- to call the api for one time only , to avoid multiple api calls
+
+props ---- sending the data from one comp to another component in the fun. call ----
+
+react -router-dom ---- to create the multiple pages effect in the single page application (react js)
+
+bootstrap ---- css framework
+
+link tag ---- like anchor tag to navigate to between the components
+
+usenavigate --- like anchor tag only but in the js code we will use it
+
+dynamic routing ---- /products/:id
+
+
+
+
+
+
+--------------------------
+
+
+
+
+context api ----- state management ----- which is similar to props
+
+
+we are using the context api because props has disadvantage of prop drilling
+
+
+step 1 : export let studentContext = createContext()
+
+
+step 2 : 
+
+
+// sedning the data to the childs
+<studentContext.Provider value={{sadhik}}>
+ <Routes>
+            <Route path="/" element={<Login />} />
+
+            <Route path="/todos" element={<Todos />} />
+
+            <Route path="/counter" element={<Counter />} />
+
+            <Route path="/products" element={<Products />} />
+
+            <Route path="/products/:id" element={<ProductDetail />} />
+
+            <Route path="/apiTodos" element={<ApiTodos />} />
+
+            <Route path="/register" element={<Register />} />
+          </Routes>
+
+
+
+
+
+</studentContext.Provider>
+
+
+step 3 : 
+
+
+// retriving the data from the context api 
+let {sadhik} = usecontext(studentCOntext)
+
+
+
+
+
+
+-------------------
+
+
+redux --- 
+
+performace ---- lazy loading, 
+
+logic ---- 
+
+
+
+
+
+
+
+
+
+
+

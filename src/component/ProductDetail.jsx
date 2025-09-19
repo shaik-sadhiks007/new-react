@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { studentContext } from '../App'
+import { useContext } from 'react'
 
 function ProductDetail() {
 
@@ -8,6 +10,11 @@ function ProductDetail() {
     // {
     //     id : 4
     // }
+
+
+    const {name,age, handleAge} = useContext(studentContext)
+
+    console.log(name,age,handleAge,'name,age,handleAge in the product detail')
 
     const [product,setProduct] = useState({})
 
